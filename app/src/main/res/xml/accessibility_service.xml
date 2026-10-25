@@ -1,0 +1,7 @@
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeWindowContentChanged|typeWindowStateChanged|typeViewClicked"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:notificationTimeout="350"
+    android:canRetrieveWindowContent="true"
+    android:packageNames="com.netflix.mediaclient"
+    android:description="@string/accessibility_description" />
