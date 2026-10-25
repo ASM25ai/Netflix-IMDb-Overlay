@@ -72,8 +72,8 @@ public class RatingAccessibilityService extends AccessibilityService {
         final android.app.AlertDialog dialog=new android.app.AlertDialog.Builder(this).setTitle("Search IMDb rating").setView(box)
             .setPositiveButton("Search",(d,w)->{String q=input.getText().toString().trim();if(valid(q))lookup(q);showingDialog=false;})
             .setNegativeButton("Cancel",(d,w)->showingDialog=false).setOnCancelListener(d->showingDialog=false).create();
-        dialog.getWindow();
-        dialog.show();dialog.getWindow().setType(WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY);
+        if(dialog.getWindow()!=null)dialog.getWindow().setType(WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY);
+        dialog.show();
     }
     private void lookup(String title){
         String key=getSharedPreferences("MainActivity",MODE_PRIVATE).getString("api_key","").trim();
